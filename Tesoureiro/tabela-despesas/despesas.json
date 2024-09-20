@@ -1,0 +1,70 @@
+{
+  "despesas": [
+    {
+      "valor": 120,
+      "motivo": "É um gasto necessário e legal",
+      "responsavel": "Murilo",
+      "data": "2024-07-24"
+    },
+    {
+      "valor": 170,
+      "motivo": "É forte",
+      "responsavel": "Eloah",
+      "data": "2008-01-28"
+    },
+    {
+      "valor": 90,
+      "motivo": "É um elefante gigante",
+      "responsavel": "Jonas",
+      "data": "2019-10-22"
+    },
+    {
+      "valor": 612,
+      "motivo": "dedede",
+      "responsavel": "Elton",
+      "data": "2024-09-05"
+    },
+    {
+      "valor": 999999999999,
+      "motivo": "passiva",
+      "responsavel": "Murilo",
+      "data": "2024-09-12"
+    },
+    {
+      "valor": 123.32,
+      "motivo": "dede",
+      "responsavel": "Pedro",
+      "data": "2024-07-05"
+    },
+    {
+      "valor": 123123,
+      "motivo": "dede",
+      "responsavel": "Murilo",
+      "data": "2024-09-27"
+    },
+    {
+      "valor": 2.24,
+      "motivo": "dededed",
+      "responsavel": "Pedro",
+      "data": "2024-11-01"
+    },
+    {
+      "valor": 13213,
+      "motivo": "deadad",
+      "responsavel": "dedede",
+      "data": "2024-09-11"
+    },
+    {
+      "valor": 13213,
+      "motivo": "dwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
+      "responsavel": "delton",
+      "data": "2024-09-07"
+    },
+    {
+      "valor": 1,
+      "motivo": "adwadw",
+      "responsavel": "Murilo",
+      "data": "2024-09-28"
+    }
+  ]
+}

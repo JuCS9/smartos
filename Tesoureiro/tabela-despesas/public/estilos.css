@@ -1,0 +1,197 @@
+body{   
+    align-items: center;
+    justify-content: center;
+}
+
+.tabela {
+    justify-content: space-between;
+    align-self: center;  
+    justify-content: center;
+    width: 70%;
+    margin-top: 8rem;
+}
+.topicos {
+    display: flex;
+    margin-left: 1rem;
+    color: #0078CE;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.orcamento-titulo {
+    margin-left: 1rem;
+}
+
+/*Colunas dos tópicos azuis S3*/
+.coluna-1 {
+    margin-left: 7.3rem;
+    padding: 0px;
+}
+
+.coluna-2 {
+    margin-left: 12rem;
+    padding: 0px;
+}
+
+.coluna-3 {
+    margin-left: 8.5rem;
+    padding: 0px;
+}
+
+.coluna-4 {
+    margin-left: 10.4rem;
+    padding: 0px;
+}
+
+.coluna-5 {
+    margin-left: 7rem; 
+    padding: 0px;
+}
+
+/*Fim das colunas*/
+
+.registro {
+    display: inline-flex;
+    margin: 0.5rem;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.busca {
+    display: inline-flex;
+    gap: 5px;
+    margin: 0.5rem;
+}
+
+.option {
+    position: absolute;
+    margin: 1rem;
+    width: 2rem;
+}
+
+.select{
+    margin-bottom: 0.8rem;
+}
+
+.faixa-cinza {
+    align-items: center;
+    background-color: #D9D9D9;
+    padding: 5px;
+    font-family: "Inter", sans-serif;
+    font-size: large;
+    font-weight: 800;
+
+}
+
+.cabecalho {
+    background-color: red;
+}
+
+.ponteiro-sort {
+    width: 1rem;
+    height: 1rem;
+    opacity: 30%;
+}
+
+.sort-botao {
+    text-decoration: none;
+    background-color: none;
+    background: none;
+    border: none;
+}
+
+.edit, .delete {
+    width: 2rem;  
+    height: 2rem;
+}
+
+.acoes {
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.borda {
+    margin-top: 0.5rem;
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 2px;
+    border-color: #CCC;
+}
+
+.valor-pg{
+width: 1.5rem;    
+height: 1.5rem;
+text-align: center;
+background-image: linear-gradient(to bottom, rgb(197,197,197), rgb(217,217,217));
+}
+
+.button-imagem {
+    text-decoration: none;
+    background-color: none;
+    background: none;
+    border: none;
+}
+
+.button-imagem:hover {
+    border: none;
+}
+
+.acoes-edit {
+    display: flex;
+    text-decoration: none;
+    background-color: none;
+    background: none;
+    border: none;
+}
+
+.acoes-delete {
+    display: flex;
+    text-decoration: none;
+    background-color: none;
+    background: none;
+    border: none;
+}
+
+.listando {
+    border: #0078CE;
+    border-top: black;
+    border-top-width: 5px;
+}
+
+/* Programação do Modal*/
+
+.modal-dialog {
+    border-radius: 2rem;
+}
+
+.botao-fim {
+    background-color: #A6393B;
+    color: white;
+    height: 3rem;
+    border-radius: 2rem;
+}
+
+.botao-fim:hover {
+    background-color: #E89495;
+}
+
+.botao-voltar {
+    height: 2rem;
+    width: 2rem;
+    text-decoration: none;
+    background-color: none;
+    background: none;
+    border: none;
+}
+
+/*Fim modal*/
+
+.table {
+    display: flex;
+    flex-direction: column;
+    max-height: 20rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+

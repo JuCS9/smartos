@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <title>Página Inicial Funcionário</title>
+    <link rel="stylesheet" href="estilos.css/estiloFuncionario.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="notificacoes" src="img/notificacoes.png" alt="Notificações">
+        <img class="usuario" src="img/user.png" alt="perfil">
+        <p class="nome"><%= nomeUsuario %></p> </header>
+
+    <section class="containers">
+        <div class="container1">
+            <p class="orcamento-nome">Orçamentos</p>
+            <p class="preco1"><%= quantidadeOrcamentos %></p>
+            <img src="img/orcamentos.png" alt="Imagem dos Serviços" class="orcamento-img">
+            <div class="linha2"></div>
+            <img src="img/atualizar.png" class="atualizar">
+            <p class="totalServicos"> Orçamentos abertos:</p>
+        </div>
+
+        <div class="container1">
+            <p class="os-nome">OS</p>
+            <p class="preco2"><%= quantidadeOS %></p>
+            <img src="img/os_colorida.png" alt="vendas" class="servicos-img">
+            <div class="linha2"></div>
+            <img src="img/atualizar.png" class="atualizar">
+            <p class="totalServicos"> OS abertas:</p>
+        </div>
+
+        <div class="container1">
+            <p class="despesas-nome">Despesas</p>
+            <p class="preco3"><%= quantidadeDespesas %></p>
+            <img src="img/aprovacao.png" alt="despesas" class="aprovacao-img">
+            <div class="linha2"></div>
+            <img src="img/atualizar.png" class="atualizar">
+            <p class="totalServicos"> Aguardando aprovação:</p>  
+        </div>
+
+        <div class="container1">
+            <p class="saldo-diario-nome">Saldo diário</p>
+            <p class="preco1"><%= saldoDiario %></p>
+            <img src="img/aprovado.png" alt="saldo" class="servicos-img">
+            <div class="linha2"></div>
+            <img src="img/atualizar.png" class="atualizar">
+            <p class="totalServicos"> OS do mês:</p>
+        </div>
+
+        <div class="linha"><p class="historico-mov">ORÇAMENTOS ABERTOS</p></div>
+    </section>
+
+    <div class="linha3"><p class="historico-mov">O.S ABERTOS</p></div>
+    </section>
+
+    <section class="sidebar">
+        <div class="logo-details">
+            <img src="img/smartlogo.png" style="width: 310px; height: 310px; position: relative; right: 45px;">
+        </div>
+        <ul class="nav-links" style="margin-top: 40px;">
+            <li>
+                <a href="#">
+                    <img src="img/clientes.png" style="width: 55px; height: 48px; padding-left: 10px;">
+                    <span class="link_name" style="position: relative; left: 20px;">Clientes</span>
+                </a>
+            </li>
+            <li>
+                <div class="icon-link" style="padding-top: 20px;">
+                    <a href="#">
+                        <img src="img/orcamento_branco.png" style="width: 55px; height: 48px; padding-left: 10px;">
+                        <span class="link_name" style="position: relative; left: 20px;">Orçamentos</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="icon-link" style="padding-top: 20px;">
+                    <a href="#">
+                        <img src="img/os_branca.png" style="width: 55px; height: 48px; padding-left: 10px;">
+                        <span class="link_name" style="position: relative; left: 20px;">Ordem de Serviço</span>
+                    </a>
+                </div>   
+            </li>
+            <li>
+                <div class="icon-link" style="padding-top: 20px;">
+                    <a href="#">
+                        <img src="img/vendas.png" style="width: 55px; height: 48px; padding-left: 10px;">
+                        <span class="link_name" style="position: relative; left: 20px;">Vendas</span>
+                    </a>
+                </div>   
+            </li>
+            <li>
+                <div class="icon-link" style="padding-top: 20px;">
+                    <a href="#">
+                        <img src="img/produtos.png" style="width: 55px; height: 48px; padding-left: 10px;">
+                        <span class="link_name" style="position: relative; left: 20px;">Produtos</span>
+                    </a>
+                </div>   
+            </li>
+            
+        </ul>
+    </section>
+
+    <script src="/App.js"></script> 
+    <script src="/public/notificacoes.js"></script> </body>
+</html>

@@ -1,4 +1,4 @@
-use smartos;
+use u610580921_smartos;
 
 CREATE TABLE clientes (
     id_cliente INT AUTO_INCREMENT PRIMARY KEY,

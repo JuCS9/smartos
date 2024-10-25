@@ -9,7 +9,20 @@ const ejs = require('ejs');
 const nodemailer = require('nodemailer');
 const router = express.Router();
 
-const port = 3000;
+const port = process.env.PORT || 3001;
+
+
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+const db = mysql.createPool({
+host: process.env.DB_HOST,
+user: process.env.DB_USERNAME,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_DBNAME,
+waitForConnections: true,
+connectionLimit: 10,
+queueLimit: 0
+});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -21,21 +34,8 @@ app.use(express.static(path.join(__dirname, 'img')));
 
 app.use(bodyParser.json());
 
-// CRIA CONEXÃO COM O BANCO DE DADOS
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'smartos'
-});
 
-db.connect((error) => {
-    if (error) {
-        console.error('Erro ao conectar ao MySQL:', error);
-    } else {
-        console.log("Conectado ao MySQL!");
-    }
-});
+
 
 // ------------------------------------------ Login ------------------------------------------
 app.get("/", (req, res) => {
@@ -605,12 +605,3 @@ async function getFuncionariosFiltrados(termo) {
 }
 
 module.exports = { getFuncionariosFiltrados };
-
-
-
-
-
-
-app.listen(port, () => {
-    console.log(`Servidor iniciado em http://localhost:${port}`);
-});

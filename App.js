@@ -15,7 +15,7 @@ const port = process.env.PORT || 3001;
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 const db = mysql.createPool({
-host: process.env.srv1595.hstgr.io,
+host: process.env.DB_HOST,
 user: process.env.DB_USERNAME,
 password: process.env.DB_PASSWORD,
 database: process.env.DB_DBNAME,

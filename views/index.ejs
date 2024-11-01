@@ -6,69 +6,13 @@
   <title>Login</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/estilosLogin.css">
+  <!-- Link the favicon logo -->
   <link rel="icon" href="<%= '/logo.png' %>" type="image/png">
   <style>
-    /* Estilos base */
+    /* Custom style to reduce the card height */
     .card {
       padding: 1rem;
       height: auto;
-      max-width: 400px; /* Tamanho máximo do card */
-      margin: auto; /* Centraliza o card */
-    }
-    
-    .logo {
-      width: 200px;
-      display: block;
-      margin: 20px auto;
-    }
-
-    .opcoes {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .botao-login, .botao-cadastrar {
-      width: 48%;
-      padding: 0.5rem;
-      font-size: 1rem;
-    }
-
-    /* Responsividade para tablets e telas médias */
-    @media (max-width: 768px) {
-      .logo {
-        width: 150px; /* Ajuste do tamanho do logo */
-      }
-      .card {
-        padding: 1rem;
-        max-width: 90%; /* Ocupa a maior parte da largura disponível */
-      }
-      .botao-login, .botao-cadastrar {
-        width: 45%; /* Ajusta largura dos botões para telas médias */
-      }
-    }
-
-    /* Responsividade para celulares e telas pequenas */
-    @media (max-width: 480px) {
-      .logo {
-        width: 120px; /* Reduz ainda mais o tamanho do logo */
-      }
-      .card {
-        padding: 1rem 0.5rem; /* Reduz o padding do card */
-        max-width: 100%; /* Usa a largura total da tela */
-      }
-      .botao-login, .botao-cadastrar {
-        width: 100%; /* Botões ocupam largura total */
-        margin-top: 5px;
-      }
-      .form-control {
-        font-size: 14px; /* Texto dos inputs reduzido */
-      }
-      .btn-primary {
-        font-size: 14px;
-        padding: 0.5rem; /* Reduz tamanho do botão "Entrar" */
-      }
     }
   </style>
 </head>
@@ -76,9 +20,9 @@
   <img src="/Logotipo.png" alt="Logo" class="logo">
   <div id="container">
     <div class="opcoes">
-      <button class="botao-login btn btn-primary"> Login </button>
-      <form action="/cadastro" method="GET" style="display: inline;">
-        <button class="botao-cadastrar btn btn-secondary"> Cadastro </button>
+      <button class="botao-login"> Login </button>
+      <form action="/cadastro" method="GET">
+        <button class="botao-cadastrar"> Cadastro </button>
       </form>  
     </div>
     <div class="card">
@@ -95,7 +39,7 @@
           <button type="submit" class="btn btn-primary btn-block" style="background-color: #9F1416; border: none;">Entrar</button>
         </form>
         <form action="/esqueci" method="GET">
-          <p><button type="submit" class="botao-esqueci btn btn-link"> Esqueceu a senha </button></p>
+          <p><button type="submit" class="botao-esqueci"> Esqueceu a senha </button></p>
         </form>
       </div>
     </div>
@@ -106,3 +50,5 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

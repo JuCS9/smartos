@@ -6,13 +6,43 @@
   <title>Login</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/estilosLogin.css">
-  <!-- Link the favicon logo -->
   <link rel="icon" href="<%= '/logo.png' %>" type="image/png">
   <style>
-    /* Custom style to reduce the card height */
+    /* Responsive container */
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 400px; /* Limits the width for larger screens */
+      padding: 1rem;
+    }
+    
+    /* Card styling for mobile */
     .card {
+      width: 100%;
       padding: 1rem;
       height: auto;
+    }
+
+    .logo {
+      width: 100px; /* Adjust logo size for smaller screens */
+      margin-bottom: 1rem;
+    }
+
+    .botao-login, .botao-cadastrar {
+      width: 100%; /* Full-width buttons for better touch usability */
+      margin-bottom: 0.5rem;
+    }
+
+    .botao-esqueci {
+      width: 100%;
+      font-size: 0.9rem; /* Smaller text for mobile screens */
+    }
+    
+    /* Reduces button spacing for mobile */
+    button[type="submit"] {
+      margin-top: 0;
     }
   </style>
 </head>
@@ -20,9 +50,9 @@
   <img src="/Logotipo.png" alt="Logo" class="logo">
   <div id="container">
     <div class="opcoes">
-      <button class="botao-login"> Login </button>
+      <button class="botao-login">Login</button>
       <form action="/cadastro" method="GET">
-        <button class="botao-cadastrar"> Cadastro </button>
+        <button class="botao-cadastrar">Cadastro</button>
       </form>  
     </div>
     <div class="card">
@@ -39,7 +69,7 @@
           <button type="submit" class="btn btn-primary btn-block" style="background-color: #9F1416; border: none;">Entrar</button>
         </form>
         <form action="/esqueci" method="GET">
-          <p><button type="submit" class="botao-esqueci"> Esqueceu a senha </button></p>
+          <p><button type="submit" class="botao-esqueci">Esqueceu a senha</button></p>
         </form>
       </div>
     </div>
@@ -50,4 +80,3 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-

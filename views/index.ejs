@@ -8,54 +8,55 @@
   <link rel="stylesheet" href="/estilosLogin.css">
   <link rel="icon" href="<%= '/logo.png' %>" type="image/png">
   <style>
-    /* Ajustes mínimos para responsividade em telas pequenas */
-    @media (max-width: 600px) {
-      #container {
-        padding: 1rem;
-      }
-
-      .card {
-        padding: 1rem;
-      }
-
-      .opcoes {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .logo {
-        width: 80px; /* Reduz o tamanho do logo para caber melhor em telas pequenas */
-        margin-bottom: 1rem;
-      }
+    /* Style adjustments to make the card more compact */
+    .card {
+      padding: 1rem;
+      height: auto;
+      max-width: 400px; /* Set a max width for larger screens */
+      margin: auto; /* Center the card horizontally */
+    }
+    .container {
+      min-height: 100vh; /* Make the container full screen height */
+      display: flex;
+      align-items: center; /* Center vertically */
+      justify-content: center;
+      padding: 1rem;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 1rem auto; /* Center the logo and add bottom margin */
+      max-width: 150px; /* Adjust logo size */
+      height: auto;
     }
   </style>
 </head>
 <body>
-  <img src="/Logotipo.png" alt="Logo" class="logo">
-  <div id="container">
-    <div class="opcoes">
-      <button class="botao-login">Login</button>
-      <form action="/cadastro" method="GET">
-        <button class="botao-cadastrar">Cadastro</button>
-      </form>  
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <form action="/login" method="POST">
-          <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required>
-          </div>
-          <div class="form-group">
-            <label for="senha">Senha:</label>
-            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block" style="background-color: #9F1416; border: none;">Entrar</button>
+  <div class="container">
+    <div>
+      <img src="/Logotipo.png" alt="Logo" class="logo">
+      <div class="opcoes text-center mb-3">
+        <button class="botao-login btn btn-secondary mr-2">Login</button>
+        <form action="/cadastro" method="GET" style="display: inline;">
+          <button class="botao-cadastrar btn btn-secondary">Cadastro</button>
         </form>
-        <form action="/esqueci" method="GET">
-          <p><button type="submit" class="botao-esqueci">Esqueceu a senha</button></p>
-        </form>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <form action="/login" method="POST">
+            <div class="form-group">
+              <label for="cpf">CPF:</label>
+              <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" required>
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha:</label>
+              <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="background-color: #9F1416; border: none;">Entrar</button>
+          </form>
+          <form action="/esqueci" method="GET" class="text-center mt-3">
+            <button type="submit" class="btn btn-link botao-esqueci">Esqueceu a senha?</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -65,5 +66,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
 

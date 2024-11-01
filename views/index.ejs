@@ -6,13 +6,52 @@
   <title>Login</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/estilosLogin.css">
-  <!-- Link the favicon logo -->
   <link rel="icon" href="<%= '/logo.png' %>" type="image/png">
   <style>
-    /* Custom style to reduce the card height */
+    /* Estilo customizado */
     .card {
       padding: 1rem;
       height: auto;
+    }
+    
+    .logo {
+      width: 200px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .logo {
+        width: 150px; /* Reduz o tamanho do logo em telas menores */
+      }
+      .card {
+        margin: 0 1rem;
+      }
+      .opcoes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .botao-login, .botao-cadastrar {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        width: 120px; /* Ajusta o tamanho do logo ainda menor */
+      }
+      .card {
+        padding: 1rem 0.5rem; /* Reduz o padding da card */
+      }
+      .form-control {
+        font-size: 14px; /* Diminui o tamanho do texto dos inputs */
+      }
+      button {
+        font-size: 14px; /* Ajusta o tamanho do texto dos botões */
+      }
     }
   </style>
 </head>
@@ -20,9 +59,9 @@
   <img src="/Logotipo.png" alt="Logo" class="logo">
   <div id="container">
     <div class="opcoes">
-      <button class="botao-login"> Login </button>
+      <button class="botao-login btn btn-primary"> Login </button>
       <form action="/cadastro" method="GET">
-        <button class="botao-cadastrar"> Cadastro </button>
+        <button class="botao-cadastrar btn btn-secondary"> Cadastro </button>
       </form>  
     </div>
     <div class="card">
@@ -39,7 +78,7 @@
           <button type="submit" class="btn btn-primary btn-block" style="background-color: #9F1416; border: none;">Entrar</button>
         </form>
         <form action="/esqueci" method="GET">
-          <p><button type="submit" class="botao-esqueci"> Esqueceu a senha </button></p>
+          <p><button type="submit" class="botao-esqueci btn btn-link"> Esqueceu a senha </button></p>
         </form>
       </div>
     </div>

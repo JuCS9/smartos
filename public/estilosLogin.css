@@ -9,6 +9,11 @@ body {
   background-size: cover;
 }
 
+icon {
+  width:64px;
+  height:64px;
+}
+
 .opcoes {
   display: flex;
   flex-direction: row;

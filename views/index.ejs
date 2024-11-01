@@ -8,41 +8,26 @@
   <link rel="stylesheet" href="/estilosLogin.css">
   <link rel="icon" href="<%= '/logo.png' %>" type="image/png">
   <style>
-    /* Responsive container */
-    #container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 auto;
-      max-width: 400px; /* Limits the width for larger screens */
-      padding: 1rem;
-    }
-    
-    /* Card styling for mobile */
-    .card {
-      width: 100%;
-      padding: 1rem;
-      height: auto;
-    }
+    /* Ajustes mínimos para responsividade em telas pequenas */
+    @media (max-width: 600px) {
+      #container {
+        padding: 1rem;
+      }
 
-    .logo {
-      width: 100px; /* Adjust logo size for smaller screens */
-      margin-bottom: 1rem;
-    }
+      .card {
+        padding: 1rem;
+      }
 
-    .botao-login, .botao-cadastrar {
-      width: 100%; /* Full-width buttons for better touch usability */
-      margin-bottom: 0.5rem;
-    }
+      .opcoes {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
 
-    .botao-esqueci {
-      width: 100%;
-      font-size: 0.9rem; /* Smaller text for mobile screens */
-    }
-    
-    /* Reduces button spacing for mobile */
-    button[type="submit"] {
-      margin-top: 0;
+      .logo {
+        width: 80px; /* Reduz o tamanho do logo para caber melhor em telas pequenas */
+        margin-bottom: 1rem;
+      }
     }
   </style>
 </head>
@@ -80,3 +65,5 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

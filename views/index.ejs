@@ -6,37 +6,32 @@
   <title>Login</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/estilosLogin.css">
-  <!-- Link do ícone favicon -->
   <link rel="icon" href="<%= '/logo.png' %>" type="image/png">
   <style>
-    /* Custom style to reduce the card height */
+    /* Estilo original para desktop */
     .card {
       padding: 1rem;
       height: auto;
-      max-width: 400px;
-      margin: 0 auto;
     }
-    .logo {
-      display: block;
-      margin: 20px auto;
-      max-width: 150px;
-      height: auto;
-    }
-    #container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .opcoes {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
+    
     /* Responsividade para dispositivos móveis */
     @media (max-width: 768px) {
       .card {
         width: 90%;
+        margin: 0 auto;
+      }
+      .logo {
+        display: block;
+        margin: 20px auto;
+        max-width: 150px;
+        height: auto;
+      }
+      .opcoes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
       }
       .btn {
         width: 100%;

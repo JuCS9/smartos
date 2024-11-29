@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funcionários</title>
+  <link rel="stylesheet" href="/estilos-funcionario-tabela.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9BzQZljtkiN8eH8/BR2+7g5BaVnSo18fJfU1G"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</head>
+
+
+<!-- Modal Adicionar Funcionários -->
+<div class="modal fade" id="adicionarFuncionarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar Funcionário</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/adicionarFuncionarios" method="post">
+          <div class="form-group">
+            <label for="nome" class="col-form-label">Nome:</label>
+            <input type="text" name="nome" class="form-control" id="nome">
+          </div>
+          <div class="form-group">
+            <label for="cpf" class="col-form-label">CPF:</label>
+            <input type="text" name="cpf" class="form-control" id="cpf">
+          </div>
+          <div class="form-group">
+            <label for="endereco" class="col-form-label">Endereço:</label>
+            <input type="text" name="endereco" class="form-control" id="endereco">
+          </div>
+          <div class="form-group">
+            <label for="telefone" class="col-form-label">Telefone:</label>
+            <input type="text" name="telefone" class="form-control" id="telefone">
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-form-label">Email:</label>
+            <input type="email" name="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="cargo" class="col-form-label">Cargo:</label>
+            <input type="text" name="cargo" class="form-control" id="cargo">
+          </div>
+          <div class="modal-footer" style="display: flex; align-items: center; justify-content: center;">
+            <button type="submit" class="btn col-12 align-items-center botao-fim">Adicionar Funcionário</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fim Modal Adicionar Funcionários -->
+
+<body>
+  <header class="d-flex col-12 p-0 m-0"
+    style="display: flex; background-color: #FF585B; align-items: center; background-size: cover; background-image: url(/faixa.png);">
+    <button type="button" onclick="window.location.href='/homepage_administrador'" class="button-imagem" style="display: flex;">
+      <img src="/Seta.png" alt="">
+    </button>
+  </header>
+
+
+  <div class="d-flex justify-content-center">
+    <div class="container">
+      <!-- Botão para abrir o modal -->
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#adicionarFuncionarioModal"
+        style="background-color: #CE4C4F; border-radius: 5px; width: 150px; font-size: 1.3rem; font-weight: 600; padding: 0px;">
+        Inserir Novo
+      </button>
+      <div class="borda">
+        <div class="text-justify">
+          <div class="d-flex justify-content-between faixa-cinza">
+            <h1 class="despesas-titulo">Funcionários</h1>
+          </div>
+          <div class="d-flex justify-content-between">
+            <form method="get" action="/funcionarios">
+              <label for="limite" style="margin-top: 1rem;">Mostrar</label>
+              <select name="limite" id="limite" onchange="this.form.submit()">
+                <option value="0"> </option>
+                <option value="1">1</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="todos">Todos</option>
+              </select>
+            </form>
+            <!--Pesquisar funcionários-->
+            <form id="searchForm">
+              <div class="busca">
+                <p>Buscar</p>
+                <input type="text" id="searchInput" placeholder="Digite para buscar...">
+              </div>
+            </form>
+
+            <!-- Caixa para exibir os resultados -->
+            <div id="searchResults" class="resultado-busca"></div>
+
+            <script>
+              // Função para realizar a busca
+              document.getElementById('searchInput').addEventListener('input', function () {
+                const termo = this.value;
+
+                // Faz a requisição apenas se o campo não estiver vazio
+                if (termo) {
+                  fetch(`/pesquisarFuncionarios?termo=${encodeURIComponent(termo)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                      let resultadosHTML = '';
+
+                      // Gera o HTML dos resultados, incluindo todos os campos
+                      data.forEach(funcionario => {
+                        resultadosHTML += `
+              <div class="resultado-item">
+                <p><strong>Nome:</strong> ${funcionario.nome}</p>
+                <p><strong>CPF:</strong> ${funcionario.cpf}</p>
+                <p><strong>Email:</strong> ${funcionario.email}</p>
+                <p><strong>Endereço:</strong> ${funcionario.endereco}</p>
+                <p><strong>Telefone:</strong> ${funcionario.telefone}</p>
+                <p><strong>Cargo:</strong> ${funcionario.cargo}</p>
+                <hr>
+              </div>
+            `;
+                      });
+
+                      document.getElementById('searchResults').innerHTML = resultadosHTML;
+                      document.getElementById('searchResults').style.display = 'block'; // Exibe os resultados
+                    })
+                    .catch(error => console.error('Erro ao buscar:', error));
+                } else {
+                  document.getElementById('searchResults').innerHTML = ''; // Limpa os resultados
+                  document.getElementById('searchResults').style.display = 'none'; // Oculta a caixa
+                }
+              });
+
+              // Oculta a caixa de resultados se o usuário clicar fora dela
+              document.addEventListener('click', function (e) {
+                const searchResults = document.getElementById('searchResults');
+                const searchInput = document.getElementById('searchInput');
+                if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                  searchResults.style.display = 'none';
+                }
+              });
+            </script>
+            <!--Fim de Pesquisa Funcionários-->
+
+
+          </div>
+        </div>
+
+        <!-- Tabela de funcionários -->
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Cargo</th>
+                <th>Admissão</th>
+                <th>Demissão</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <% funcionarios.forEach(funcionario=> { %>
+                <tr>
+                  <td>
+                    <%= funcionario.nome %>
+                  </td>
+                  <td>
+                    <%= funcionario.cpf %>
+                  </td>
+                  <td>
+                    <%= funcionario.endereco %>
+                  </td>
+                  <td>
+                    <%= funcionario.telefone %>
+                  </td>
+                  <td>
+                    <%= funcionario.email %>
+                  </td>
+                  <td>
+                    <%= funcionario.cargo %>
+                  </td>
+                  <td>
+                    <%= funcionario.data_cadastro %>
+                  </td>
+                  <td>
+                    <%= funcionario.data_demissao %>
+                  </td>
+                  <td>
+                    <!-- Botão para abrir modal de edição -->
+                    <button type="button" class="acoes-edit"
+                      onclick="abrirModal('<%= funcionario.cpf %>', '<%= funcionario.nome %>', '<%= funcionario.endereco %>', '<%= funcionario.telefone %>', '<%= funcionario.email %>', '<%= funcionario.cargo %>')">
+                      <img class="edit" src="/edit.png" alt="">
+                    </button>
+                    <button type="button" class="acoes-delete" onclick="excluirFuncionario('<%= funcionario.cpf %>')">
+                      <img class="delete" src="/delete.png" alt="">
+                    </button>
+
+                  </td>
+                </tr>
+                <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de edição -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="border: none;">
+          <h5 class="modal-title" id="exampleModalLabel">Editando Funcionário</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/editarFuncionarios" method="post">
+            <input type="hidden" name="cpf" id="modal-cpf">
+            <div class="form-group">
+              <label for="modal-nome">Nome:</label>
+              <input type="text" class="form-control" name="nome" id="modal-nome">
+            </div>
+            <div class="form-group">
+              <label for="modal-telefone">Telefone:</label>
+              <input type="text" class="form-control" name="telefone" id="modal-telefone">
+            </div>
+            <div class="form-group">
+              <label for="modal-email">Email:</label>
+              <input type="email" class="form-control" name="email" id="modal-email">
+            </div>
+            <div class="form-group">
+              <label for="modal-endereco">Endereço:</label>
+              <input type="text" class="form-control" name="endereco" id="modal-endereco">
+            </div>
+            <div class="form-group">
+              <label for="modal-cargo">Cargo:</label>
+              <input type="text" class="form-control" name="cargo" id="modal-cargo">
+            </div>
+            <div class="modal-footer" style="align-items: center; justify-content: center; border: none;">
+              <button type="submit" class="btn btn-primary"
+                style="background-color: #A43C3F; border: none; width: 30rem; height: 3rem;">Finalizar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para abrir o modal de edição -->
+  <script>
+    function abrirModal(cpf, nome, endereco, telefone, email, cargo) {
+      document.getElementById('modal-cpf').value = cpf;
+      document.getElementById('modal-nome').value = nome;
+      document.getElementById('modal-endereco').value = endereco;
+      document.getElementById('modal-telefone').value = telefone;
+      document.getElementById('modal-email').value = email;
+      document.getElementById('modal-cargo').value = cargo;
+      $('#exampleModal').modal('show');
+    }
+  </script>
+
+  <!--Exclusão de funcionários-->
+  <script>
+    function excluirFuncionario(cpf) {
+      if (confirm('Tem certeza de que deseja excluir este funcionário?')) {
+        fetch('/excluirFuncionario', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ cpf: cpf })
+        })
+          .then(response => response.text())
+          .then(message => {
+            alert(message);
+            location.reload(); // Atualiza a página após a exclusão
+          })
+          .catch(error => console.error('Erro ao excluir funcionário:', error));
+      }
+    }
+  </script>
+
+<!--Script para adicionar Funcionários-->
+<script>
+  document.querySelector('form[action="/adicionarFuncionarios"]').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o recarregamento da página
+
+    // Captura os dados do formulário
+    const formData = new FormData(this);
+    const data = {};
+
+    // Converte FormData para um objeto
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Envia a requisição para o servidor
+    fetch('/adicionarFuncionarios', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json' // Define o cabeçalho para JSON
+      },
+      body: JSON.stringify(data) // Envia o objeto como JSON
+    })
+    .then(response => response.text())
+    .then(message => {
+      alert(message); // Exibe a mensagem de sucesso
+      location.reload(); // Recarrega a página para mostrar a lista atualizada de clientes
+    })
+    .catch(error => console.error('Erro ao adicionar cliente:', error));
+  });
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movimentações</title>
+  <link rel="stylesheet" href="/estilos-movimentacao.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--Fontes-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <!--Fim fontes-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  
+  
+</head>
+  
+</div>
+<body>
+  <header class="d-flex col-12 p-0 m-0" style="display: flex; background-color: #FF585B; align-items: center; background-size: cover; background-image: url(/faixa.png);">
+    
+    <button type="button" onclick="window.location.href='/homepage_administrador'" class="button-imagem" style="display: flex;">
+      <img src="/Seta.png" alt="">
+    </button>
+</header>
+
+  <div class="d-flex justify-content-center">
+  <div class="container">
+  <div class="borda">
+  <div class="text-justify">
+     
+        <div class="d-flex justify-content-between faixa-cinza">
+
+          <h1 class="despesas-titulo">Movimentações</h1>
+          
+         
+
+        </div>
+          <div class="d-flex justify-content-between">
+            <div class="registro e buscar">
+              <p>Mostrar </p>
+              <select class="select">
+                <optgroup label="Mostrar">
+                
+                <option> <li>1</li> </option>
+                <option> <li>2</li> </option>
+                <option> <li>3</li> </option>
+                <option> <li>4</li> </option>
+
+              </optgroup>
+              </select>
+              <p> registros</p>
+            </div>
+            <div class="busca">
+              <p>Buscar</p> <label> <input type="text" value="Pesquisar..."></label>
+            </div>
+          </div>
+      </div>
+      
+      <div class="table-wrapper">
+      <table class="table">
+
+      <thead>
+         <tr>
+            <th scope="col"> Valor        <button type="button" class="button-imagem"><img class="ponteiro-sort" src="/icons8-ordenar-50.png" alt=""></button> </th>   
+            <th scope="col"> Tipo          <button type="button" class="button-imagem"><img class="ponteiro-sort" src="/icons8-ordenar-50.png" alt=""></button> </th>   
+            <th scope="col"> Responsável     <button type="button" class="button-imagem"><img class="ponteiro-sort" src="/icons8-ordenar-50.png" alt=""></button> </th>
+            <th scope="col"> Data     <button type="button" class="button-imagem"><img class="ponteiro-sort" src="/icons8-ordenar-50.png" alt=""></button> </th>
+                                                                                                                        
+        </tr>
+      </thead>
+      <tbody>
+
+         <!--Botar informações aqui-->
+        <% movimentacoes.forEach(movimentacao => { %>
+        <tr style="width: 100%;">
+          <td scope="row"> <%= movimentacao.valor %>       </td>
+          <td scope="row"> <%= movimentacao.tipo %>         </td>
+          <td scope="row"> <%= movimentacao.responsavel %>    </td>
+          <td scope="row"> <%= movimentacao.data %>    </td> 
+        </tr>
+        <% }); %>
+       <!--Fim informações-->
+       
+      </tbody>
+      </table>
+    </div>
+    <div class="linha"></div>
+    
+      <div class="d-flex justify-content-between col-12 listando">
+        <p>Listando 1 de <%= total %> </p>
+
+        <p>Anterior <input class="valor-pg" id="#" type="text" value="1" disabled> Próximo</p>
+      </div>
+    </div>
+    <div class="extrato"><p>R$1200,00</p></div>
+  </div>
+  </div>
+
+  
+
+</body>
+</html>

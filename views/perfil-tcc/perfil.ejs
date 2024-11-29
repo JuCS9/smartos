@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/perfil_estilo.css">
+    <title>Perfil</title>
+    <style>
+        /* Desabilitar rolagem */
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="notificacoes" src="/notificacao_branco.png" alt="Notificações">
+        <img class="usuario" src="/perfil_branco.png" alt="perfil" style="margin-left: -3px;">
+    </header>
+    <div class="container4">
+  
+        <div class="perfil-box"> 
+                 <% dados.forEach(dado => { %>
+            <h1 class="titulo-usuario">Nome de Usuário</h1>
+            <hr class="divider">
+            <h2 class="info-label">Nome</h2>
+            <p class="info"><%= dado.nome %></p>
+            
+            <h2 class="info-label">CPF</h2>
+            <p class="info"><%= dado.cpf %></p>
+            
+            <h2 class="info-label">Endereço</h2>
+            <p class="info"><%= dado.endereco%></p>
+            
+            <h2 class="info-label">Email</h2>
+            <p class="info"><%= dado.email %></p>
+            
+            <h2 class="info-label">Telefone</h2>
+            <p class="info"><%= dado.telefone %></p>
+            <% }); %>
+                <button onclick="window.location.href='/ir-para?destino=perfil_editar';" class="editar-btn">Editar</button>
+        </div>
+    </div>    
+</body>
+</html>

@@ -27,7 +27,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'smartos'
+    database: 'u610580921_smartos'
 });
 
 db.connect((error) => {

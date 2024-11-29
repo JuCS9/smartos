@@ -1,4 +1,10 @@
 const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}!`);
+});
 const session = require('express-session');
 const app = express();
 const fs = require('fs');

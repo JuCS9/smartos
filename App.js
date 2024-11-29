@@ -9,8 +9,6 @@ const ejs = require('ejs');
 const nodemailer = require('nodemailer');
 const router = express.Router();
 
-const port = 3000;
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));

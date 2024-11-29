@@ -22,12 +22,19 @@ app.use(express.static(path.join(__dirname, 'img')));
 
 app.use(bodyParser.json());
 
-// CRIA CONEXÃO COM O BANCO DE DADOS
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'u610580921_smartos'
+const port = process.env.PORT || 3001;
+
+
+const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+const db = mysql.createPool({
+host: process.env.DB_HOST,
+user: process.env.DB_USERNAME,
+password: process.env.DB_PASSWORD,
+database: process.env.DB_DBNAME,
+waitForConnections: true,
+connectionLimit: 10,
+queueLimit: 0
 });
 
 db.connect((error) => {

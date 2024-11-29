@@ -35,14 +35,6 @@ connectionLimit: 10,
 queueLimit: 0
 });
 
-db.connect((error) => {
-    if (error) {
-        console.error('Erro ao conectar ao MySQL:', error);
-    } else {
-        console.log("Conectado ao MySQL!");
-    }
-});
-
 //Voltar para a homepage clicando na seta
 app.get('/homepage_administrador', (req, res) => {
     res.render('homepages/homepage_administrador');
